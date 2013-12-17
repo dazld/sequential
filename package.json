@@ -1,0 +1,21 @@
+{
+  "name": "sequential",
+  "version": "0.0.0",
+  "description": "tools for handling time-based sequential tasks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dazld/sequential.git"
+  },
+  "keywords": [
+    "animation"
+  ],
+  "author": "Dan Peddle",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dazld/sequential/issues"
+  }
+}
