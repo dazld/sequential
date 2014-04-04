@@ -1,6 +1,6 @@
 {
   "name": "sequential",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "tools for handling time-based sequential tasks",
   "main": "index.js",
   "scripts": {
