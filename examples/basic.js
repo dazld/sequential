@@ -4,15 +4,15 @@ var failKnight = "Plenty of practice!' he went on repeating, all the time that A
 
 function printLetter(letter){
 	process.stdout.write(letter);
-} 
+
+}
 
 var letters = failKnight.split('');
 
-// simple
-letters.forEach(printLetter);
 
 // sequential
 var sequence = sequential(printLetter, letters, 12);
 
 sequence();
+
 

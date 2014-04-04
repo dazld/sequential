@@ -1,6 +1,6 @@
 {
   "name": "sequential",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "tools for handling time-based sequential tasks",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,8 @@
     "url": "git://github.com/dazld/sequential.git"
   },
   "keywords": [
-    "animation"
+    "animation",
+    "isochronous"
   ],
   "author": "Dan Peddle",
   "license": "MIT",

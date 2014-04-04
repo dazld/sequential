@@ -10,6 +10,7 @@ i guess space is optional, actually. but the time bit is important.
 Let's assume you have a series of commands you want to execute `sequential`ly. This could look like:
 
 - One handler function which is called repetitively while it still has data left to execute on its stack
+- chained `then` commands which are executed after the stack has completed
 - A series of callbacks (@todo)
 
 This library lets you create a new function from this, which you can then execute when you are ready. 
@@ -17,15 +18,28 @@ This library lets you create a new function from this, which you can then execut
 The API is pretty simple. 
 
 ```javascript
-
+var boundConsole = console.log.bind(console);
 var sequential = require('sequential');
 
-var mySequence = sequential(handlerFunc, arrayOfHandlerFuncArgs, timePerOperation);
+
+var mySequence = sequential(boundConsole, [1,2,3,4], 100);
+
+mySequence.then(console.lob.bind(console),'almost there');
+mySequence.then(console.lob.bind(console),'almost, almost').then(console.log.bind(console),'and we are done');
 
 // run this sequence
 mySequence();
 
 ```
+
+This produces the following output:
+
+```
+
+
+
+```
+
 
 As this is /!\ totally alpha /!\ expect this to change, but you get the idea.
 
@@ -35,6 +49,7 @@ As this is /!\ totally alpha /!\ expect this to change, but you get the idea.
 - pause, restart, cancel (again, maybe as an EE)
 - pass array of callbacks which are called sequentially
 - tests once a solid API emerges from the original idea
+- don't let the function be called again (will currently reexecute the chained functions);
 
 ## example
 
