@@ -21,11 +21,13 @@ The API is pretty simple.
 var boundConsole = console.log.bind(console);
 var sequential = require('sequential');
 
-
+// the signature is handlerFunc, array of args, time between steps
 var mySequence = sequential(boundConsole, [1,2,3,4], 100);
 
-mySequence.then(console.lob.bind(console),'almost there');
-mySequence.then(console.lob.bind(console),'almost, almost').then(console.log.bind(console),'and we are done');
+// all these functions are called synchronously
+mySequence.then(boundConsole,'almost there');
+// can chain thens too
+mySequence.then(boundConsole,'almost, almost').then(boundConsole,'and we are done');
 
 // run this sequence
 mySequence();
@@ -36,7 +38,13 @@ This produces the following output:
 
 ```
 
-
+1
+2
+3
+4
+almost there
+almost, almost
+and we are done
 
 ```
 
@@ -69,7 +77,7 @@ letters.forEach(printLetter);
 
 // sequential
 var sequence = sequential(printLetter, letters, 12);
-
+sequence.then(console.log.bind(console), 'done');
 sequence();
 
 ```
