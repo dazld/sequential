@@ -83,6 +83,12 @@ sequence();
 ```
 
 
+# changelog
+
+## 0.0.4
+
+- Remove JSON.stringify / JSON.parse dance (not needed)
+
 ## licence
 
 The MIT License (MIT)
